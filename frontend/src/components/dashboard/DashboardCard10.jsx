@@ -67,9 +67,12 @@ function DashboardCard10() {
                               <td className='p-2 whitespace-nowrap'>
                                  <div className='text-lg text-center'>{customer.location}</div>
                               </td>
-                              <button>Approve</button>
-                              <br />
-                              <button>Reject</button>
+                              <td>
+                                 {" "}
+                                 <button>Approve</button>
+                                 <br />
+                                 <button>Reject</button>
+                              </td>
                            </tr>
                         );
                      })}

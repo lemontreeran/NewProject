@@ -1,12 +1,29 @@
-import React, { useState } from "react";
-
-import DashboardCard01 from "../components/dashboard/DashboardCard01";
-import DashboardCard02 from "../components/dashboard/DashboardCard02";
-import DashboardCard03 from "../components/dashboard/DashboardCard03";
-import DashboardCard10 from "../components/dashboard/DashboardCard10";
-import DashboardCard12 from "../components/dashboard/DashboardCard12";
+import React, { useState, useEffect } from "react";
+import { set_access_token } from "../utils/accessToken";
+import axios from "axios";
+import DashboardCard01 from "./dashboard/DashboardCard01";
+import DashboardCard02 from "./dashboard/DashboardCard02";
+import DashboardCard03 from "./dashboard/DashboardCard03";
+import DashboardCard10 from "./dashboard/DashboardCard10";
+import DashboardCard12 from "./dashboard/DashboardCard12";
 
 function Dashboard() {
+   let [company, setcompany] = useState([]);
+
+   useEffect(() => {
+      set_access_token();
+      getcompany();
+   }, []);
+
+   let getcompany = async () => {
+      let response = await axios.get(`http://127.0.0.1:8000/company/`, { headers: { Authorization: `Bearer ${localStorage.getItem("access_token")}` } });
+
+      if (response.status === 200) {
+         setcompany(response.data);
+      }
+      console.log("data", response.data);
+   };
+
    return (
       <main>
          <div className='px-4 sm:px-6 lg:px-8 py-8 w-full max-w-9xl mx-auto'>

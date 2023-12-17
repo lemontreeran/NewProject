@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import { Routes, Route, useLocation } from "react-router-dom";
 
 import "./css/style.css";
-import Dashboard from "./pages/Dashboard";
+import Dashboard from "./components/Dashboard";
 import Register from "./components/Register";
 import Login from "./components/Login";
 import Buy from "./components/Buy";
