@@ -9,9 +9,9 @@ from rest_framework import permissions
 
 schema_view = get_schema_view(
     openapi.Info(
-        title="Crowdfunding platform",
+        title="Decarbonify",
         default_version="v1",
-        description="This is a REST API for the Crowdfunding platform",
+        description="This is a REST API for the Decarbonify platform",
     ),
     public=True,
     permission_classes=(permissions.AllowAny,),
@@ -24,7 +24,6 @@ urlpatterns = [
     path('api/token/refresh/', jwt_views.TokenRefreshView.as_view(),
          name='token_refresh'),
     path('account/', include('account.urls')),
-    path('campaigns/', include('campaigns.urls')),
     path('country/', include('country.urls')),
     path('company/', include('company.urls')),
     path("", schema_view.with_ui("swagger", cache_timeout=0)),

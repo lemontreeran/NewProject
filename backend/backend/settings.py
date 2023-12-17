@@ -39,7 +39,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
 
     'account',
-    'campaigns',
+    # 'campaigns',
     'country',
     'company',
 

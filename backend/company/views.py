@@ -16,7 +16,7 @@ class CompanyView(generics.GenericAPIView):
     permission_classes = [IsAuthenticated]
 
     def get(self, request):
-        company = Company.objects.all().filter(created_by=request.user.id)
+        company = Company.objects.all().filter(created_by=1)
         serializer = self.serializer_class(instance=company, many=True)
         return Response(data=serializer.data, status=status.HTTP_200_OK)
 
