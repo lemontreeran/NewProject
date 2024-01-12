@@ -1,8 +1,4 @@
 ## Details
-- Track: Sustainability
-- Age: 18+
-
-## Inspiration
 
 Enter the epic story of our world, where a glaring imbalance steals the show: the drama of pollution,
 
@@ -23,6 +19,7 @@ Essentially, carbon trading is a mechanism that allows businesses to purchase an
 - Conversely, nations endowed with surplus credits can choose to make them available for purchase by others
 
 ## How we built it
-- Backend: Django REST, Swagger
-- Frontend: React, Tailwin
-- Blockchain: Ganache, Metamask, ether.js
+
+- Backend: Django REST framework, Swagger, Python
+- Frontend: React, Tailwind, Axios
+- Blockchain: Ganache, Ether.js, Metamask wallet
